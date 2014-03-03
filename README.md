@@ -6,7 +6,7 @@ Adds a 'ACF Sites' field type for the [Advanced Custom Fields](http://wordpress.
 
 ### Overview
 
-Extension for ACF which provides the user with a dropdown of the multisites blogs. This plugin provides an additional field for Advanced Custom Fields. The field outputs a dropdown in which the user may select one or more blogs in a multisite network. The stored value can then be used to fetch the selected blog(s) ids. More to follow. 
+Addon for Advanced Custom Fields which provides a field containing the sites in a multisite network. This plugin provides an additional field for Advanced Custom Fields. The field outputs either checkboxes or a dropdown in which the user may select one or more sites in a multisite network. The stored value can then be used to fetch the selected blog(s) ids. More to follow. 
 
 ### Compatibility
 
