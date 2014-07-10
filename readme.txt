@@ -30,3 +30,6 @@ This ACF field type is compatible with:
 
 = 1.0.0 =
 * Initial Release.
+
+= 1.1.0 =
+* This update adds support for ACF 5.0. It also deprecates ACF 3 so users with ACF3 need to use the previous version of this add-on or update ACF (highly recommended)
