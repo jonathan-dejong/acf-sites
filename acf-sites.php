@@ -1,9 +1,10 @@
 <?php
+
 /*
 Plugin Name: Advanced Custom Fields: Sites
 Plugin URI: https://github.com/jonathan-dejong/acf-sites
-Description: Extension for ACF which provides the user with a dropdown of the multisites sites
-Version: 1.0.0
+Description: Extension for ACF which provides the user with either a dropdown or checkboxes to select a networks sites from. Returns the blog IDs to do with as you wish!
+Version: 1.1.0
 Author: Jonathan de Jong
 Author URI: tigerton.se
 License: GPLv2 or later
@@ -11,66 +12,38 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 
-class acf_field_sites_plugin
-{
-	/*
-	*  Construct
-	*
-	*  @description:
-	*  @since: 3.6
-	*  @created: 1/04/13
-	*/
-
-	function __construct()
-	{
-		// set text domain
-		/*
-		$domain = 'acf-sites';
-		$mofile = trailingslashit(dirname(__File__)) . 'lang/' . $domain . '-' . get_locale() . '.mo';
-		load_textdomain( $domain, $mofile );
-		*/
 
 
-		// version 4+
-		add_action('acf/register_fields', array($this, 'register_fields'));
+// 1. set text domain
+// Reference: https://codex.wordpress.org/Function_Reference/load_plugin_textdomain
+load_plugin_textdomain( 'acf-sites', false, dirname( plugin_basename(__FILE__) ) . '/lang/' ); 
 
 
-		// version 3-
-		add_action('init', array( $this, 'init' ), 5);
-	}
 
 
-	/*
-	*  Init
-	*
-	*  @description:
-	*  @since: 3.6
-	*  @created: 1/04/13
-	*/
-
-	function init()
-	{
-		if(function_exists('register_field'))
-		{
-			register_field('acf_field_sites', dirname(__File__) . '/sites-v3.php');
-		}
-	}
-
-	/*
-	*  register_fields
-	*
-	*  @description:
-	*  @since: 3.6
-	*  @created: 1/04/13
-	*/
-
-	function register_fields()
-	{
-		include_once('sites-v4.php');
-	}
-
+// 2. Include field type for ACF5
+// $version = 5 and can be ignored until ACF6 exists
+function include_field_types_sites( $version ) {
+	
+	include_once('acf-sites-v5.php');
+	
 }
 
-new acf_field_sites_plugin();
+add_action('acf/include_field_types', 'include_field_types_sites');	
 
+
+
+
+// 3. Include field type for ACF4
+function register_fields_sites() {
+	
+	include_once('acf-sites-v4.php');
+	
+}
+
+add_action('acf/register_fields', 'register_fields_sites');	
+
+
+
+	
 ?>

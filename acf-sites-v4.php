@@ -20,7 +20,7 @@ class acf_field_sites extends acf_field
 	{
 		// vars
 		$this->name = 'sites';
-		$this->label = __('sites');
+		$this->label = __('Sites');
 		$this->category = __("Relational",'acf');
 		$this->defaults = array(
 			'checkbox_select' => 'checkbox',
