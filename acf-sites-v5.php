@@ -196,6 +196,7 @@ class acf_field_sites extends acf_field {
 						echo '<option value="">' . __('select a site…') . '</option>';
 					}
 						foreach($sites as $site){
+							$atts = '';
 							if( in_array($site['blog_id'], $field['value']) ){
 								$atts = 'selected="selected"';
 							}
@@ -208,6 +209,7 @@ class acf_field_sites extends acf_field {
 					echo '</select>';
 				}else if($checkbox_select == 'checkbox'){
 					foreach($sites as $site){
+						$atts = '';
 						if( in_array($site['blog_id'], $field['value']) ){
 							$atts = 'checked="checked"';
 						}
