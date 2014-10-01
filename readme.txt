@@ -1,17 +1,15 @@
-=== Advanced Custom Fields: FIELD_LABEL Field ===
-Contributors: AUTHOR_NAME
-Tags: PLUGIN_TAGS
+=== Advanced Custom Fields: Sites Field ===
+Contributors: tigerton, jonathan-dejong
+Tags: sites, wpmu, acf, advanced custom fields
 Requires at least: 3.5
-Tested up to: 3.8.1
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-DESCRIPTION
+Adds a ’Sites’ field type for the [Advanced Custom Fields](http://wordpress.org/extend/plugins/advanced-custom-fields/) WordPress plugin.
 
-Adds a 'ACF Sites' field type for the [Advanced Custom Fields](http://wordpress.org/extend/plugins/advanced-custom-fields/) WordPress plugin.
-
-EXTENDED_DESCRIPTION
+== Description ==
 
 This field type gives the user the option to choose from displaying sites as a drop down or as checkboxes (to allow for multiple selections). These sites IDs are then saved and can be retrieved for any kind of use. You might use this to have an ads post type which can be set to be displayed on a single or multiple sites in a network.. just as an example! 
 
