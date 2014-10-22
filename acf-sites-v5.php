@@ -123,7 +123,7 @@ class acf_field_sites extends acf_field {
 			'layout'  =>  'horizontal',
 			'choices' =>  array(
 				'yes' => __('Yes'),
-				'no' => __('No'),
+				'no' => __('No')
 			)
 		));
 		
@@ -135,7 +135,20 @@ class acf_field_sites extends acf_field {
 			'layout'  =>  'horizontal',
 			'choices' =>  array(
 				'yes' => __('Yes'),
-				'no' => __('No'),
+				'no' => __('No')
+			)
+		));
+		
+		acf_render_field_setting( $field, array(
+			'label'			=> __('Return value','acf-sites'),
+			'instructions'	=> __('','acf-sites'),
+			'type'			=> 'radio',
+			'name'			=> 'return_value',
+			'layout'  =>  'horizontal',
+			'choices' =>  array(
+				'id' => __('ID'),
+				'name' => __('Name'),
+				'siteurl' => __('URL')
 			)
 		));
 
@@ -402,13 +415,33 @@ class acf_field_sites extends acf_field {
 	*  @param	$field (array) the field array holding all the field options
 	*  @return	$value
 	*/
-	/*
 	function load_value( $value, $post_id, $field ) {
+		
+		$returnvalue = $field['return_value'];
+		if($returnvalue == 'id'){
+			return $value;
+		}elseif($returnvalue == 'name'){
+			$new_value = array();
+			if($value){
+				foreach($value as $site_id){
+					$new_value[] = get_blog_details($site_id)->blogname;
+				}
+				return $new_value;
+			}
+		}elseif($returnvalue == 'siteurl'){
+			$new_value = array();
+			if($value){
+				foreach($value as $site_id){
+					$new_value[] = get_blog_details($site_id)->siteurl;
+				}
+				return $new_value;
+			}
+		}
 		
 		return $value;
 		
 	}
-	*/
+	
 
 	
 	
