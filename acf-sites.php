@@ -4,7 +4,7 @@
 Plugin Name: Advanced Custom Fields: Sites
 Plugin URI: https://github.com/jonathan-dejong/acf-sites
 Description: Extension for ACF which provides the user with either a dropdown or checkboxes to select a networks sites from. Returns the blog IDs to do with as you wish!
-Version: 1.2.0
+Version: 1.1.0
 Author: Jonathan de Jong
 Author URI: tigerton.se
 License: GPLv2 or later

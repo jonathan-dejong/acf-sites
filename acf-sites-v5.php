@@ -44,7 +44,11 @@ class acf_field_sites extends acf_field {
 		*/
 		
 		$this->defaults = array(
-			'font_size'	=> 14,
+			'checkbox_select'	=> 'select',
+			'site_status' => '',
+			'hide_main' => 'yes',
+			'allow_null' => 'no',
+			'return_value' => 'id'
 		);
 		
 		
@@ -417,6 +421,7 @@ class acf_field_sites extends acf_field {
 	*/
 	function load_value( $value, $post_id, $field ) {
 		
+		print_r($field);
 		$returnvalue = $field['return_value'];
 		if($returnvalue == 'id'){
 			return $value;
