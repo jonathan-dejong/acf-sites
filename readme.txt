@@ -1,13 +1,13 @@
 === Advanced Custom Fields: Sites Field ===
-Contributors: tigerton, jonathan-dejong
+Contributors: tigerton, jonathandejong
 Tags: sites, wpmu, acf, advanced custom fields
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: trunk
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Adds a ’Sites’ field type for the [Advanced Custom Fields](http://wordpress.org/extend/plugins/advanced-custom-fields/) WordPress plugin.
+Adds a ’Sites’ field type for the Advanced Custom fields WordPress plugin.
 
 == Description ==
 
@@ -36,3 +36,7 @@ This ACF field type is compatible with:
 
 = 1.1.1 =
 * Bugfix - non selected items are no longer automatically selected (same for checkboxes)
+* Bugfix – added default values to field options
+
+= 1.1.2 =
+* Bugfixes

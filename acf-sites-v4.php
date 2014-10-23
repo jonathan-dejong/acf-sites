@@ -151,27 +151,6 @@ class acf_field_sites extends acf_field
 				?>
 			</td>
 		</tr>
-		<tr class="field_option field_option_<?php echo $this->name; ?>">
-			<td class="label">
-				<label><?php _e("Return value", 'acf'); ?></label>
-				<p class="description"><?php _e("", 'acf'); ?></p>
-			</td>
-			<td>
-				<?php
-				do_action('acf/create_field', array(
-					'type'    =>  'radio',
-					'name'    =>  'fields[' . $key . '][return_value]',
-					'value'   =>  $field['return_value'],
-					'layout'  =>  'horizontal',
-					'choices' =>  array(
-						'id' => __('ID'),
-						'name' => __('Name'),
-						'siteurl' => __('URL')
-					)
-				));
-				?>
-			</td>
-		</tr>
 
 		
 		<?php
@@ -325,28 +304,6 @@ class acf_field_sites extends acf_field
 		// make sure even select returns an array, for consistency!
 		$checkbox_select = $field['checkbox_select'];
 		$value = ($checkbox_select == 'select' ? array($value) : $value);
-		
-		
-		$returnvalue = $field['return_value'];
-		if($returnvalue == 'id'){
-			return $value;
-		}elseif($returnvalue == 'name'){
-			$new_value = array();
-			if($value){
-				foreach($value as $site_id){
-					$new_value[] = get_blog_details($site_id)->blogname;
-				}
-				return $new_value;
-			}
-		}elseif($returnvalue == 'siteurl'){
-			$new_value = array();
-			if($value){
-				foreach($value as $site_id){
-					$new_value[] = get_blog_details($site_id)->siteurl;
-				}
-				return $new_value;
-			}
-		}
 
 		// Note: This function can be removed if not used
 		return $value;
