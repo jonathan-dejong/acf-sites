@@ -421,7 +421,6 @@ class acf_field_sites extends acf_field {
 	*/
 	function load_value( $value, $post_id, $field ) {
 		
-		print_r($field);
 		$returnvalue = $field['return_value'];
 		if($returnvalue == 'id'){
 			return $value;
