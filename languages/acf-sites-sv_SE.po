@@ -1,0 +1,166 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Custom Fields: Sites\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-08 10:45+0000\n"
+"PO-Revision-Date: 2016-10-08 10:45+0000\n"
+"Last-Translator: Jonathan de Jong <jonathan@tigerton.se>\n"
+"Language-Team: Swedish\n"
+"Language: sv-SE\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: fields/acf-sites-v4.php:29 fields/acf-sites-v5.php:35
+msgid "Sites"
+msgstr "Sajter"
+
+#: fields/acf-sites-v4.php:30
+msgid "Relation"
+msgstr "Relation"
+
+#: fields/acf-sites-v4.php:71 fields/acf-sites-v5.php:95
+msgid "Appearance"
+msgstr "Utseende"
+
+#: fields/acf-sites-v4.php:72 fields/acf-sites-v5.php:96
+msgid "Select the appearance of this field"
+msgstr "Välj utseende för detta fält"
+
+#: fields/acf-sites-v4.php:83 fields/acf-sites-v5.php:101
+msgid "Multiple Values"
+msgstr "Multipla värden"
+
+#: fields/acf-sites-v4.php:84 fields/acf-sites-v5.php:102
+msgid "Checkbox"
+msgstr "Kryssruta"
+
+#: fields/acf-sites-v4.php:85 fields/acf-sites-v5.php:103
+msgid "Multi Select"
+msgstr "Flerval"
+
+#: fields/acf-sites-v4.php:87 fields/acf-sites-v5.php:105
+msgid "Single Value"
+msgstr "Ett enda värde"
+
+#: fields/acf-sites-v4.php:88 fields/acf-sites-v5.php:106
+msgid "Radio Buttons"
+msgstr "Alternativknappar"
+
+#: fields/acf-sites-v4.php:89 fields/acf-sites-v5.php:107
+msgctxt "noun"
+msgid "Select"
+msgstr "Rullgardinslista"
+
+#: fields/acf-sites-v4.php:98 fields/acf-sites-v5.php:113
+msgid "Allow null"
+msgstr "Tillåt nollvärde?"
+
+#: fields/acf-sites-v4.php:118 fields/acf-sites-v5.php:125
+msgid "Site status"
+msgstr "sajtstatus"
+
+#: fields/acf-sites-v4.php:119 fields/acf-sites-v5.php:126
+msgid "WordPress currently only support limiting to single status."
+msgstr "WordPress stödjer för tillfället enbart begränsning till en status."
+
+#: fields/acf-sites-v4.php:129 fields/acf-sites-v5.php:131
+msgid "All"
+msgstr "Alla"
+
+#: fields/acf-sites-v4.php:130 fields/acf-sites-v5.php:132
+msgid "Public"
+msgstr "Publik"
+
+#: fields/acf-sites-v4.php:131 fields/acf-sites-v5.php:133
+msgid "Archived"
+msgstr "Arkiverad"
+
+#: fields/acf-sites-v4.php:132 fields/acf-sites-v5.php:134
+msgid "Mature"
+msgstr "Vuxen"
+
+#: fields/acf-sites-v4.php:133 fields/acf-sites-v5.php:135
+msgid "Spam"
+msgstr "Spam"
+
+#: fields/acf-sites-v4.php:134 fields/acf-sites-v5.php:136
+msgid "Deleted"
+msgstr "Raderad"
+
+#: fields/acf-sites-v4.php:142 fields/acf-sites-v5.php:141
+msgid "Hide main site"
+msgstr "Dölj huvudsajt"
+
+#: fields/acf-sites-v4.php:162 fields/acf-sites-v5.php:153
+msgid "Exclude sites"
+msgstr "Exkludera sajter"
+
+#: fields/acf-sites-v4.php:163 fields/acf-sites-v5.php:154
+msgid "Comma separated site IDs"
+msgstr "komma-separerade sajt id"
+
+#: fields/acf-sites-v4.php:177 fields/acf-sites-v5.php:160
+msgid "Return value"
+msgstr "Returvärde"
+
+#: fields/acf-sites-v4.php:178 fields/acf-sites-v5.php:161
+msgid "Specify the value returned"
+msgstr ""
+"Specificera vad fältet ska returnera. Dessa är alltid formatterade som en "
+"array."
+
+#: fields/acf-sites-v4.php:188 fields/acf-sites-v5.php:166
+msgid "Site ID"
+msgstr "Sajt ID"
+
+#: fields/acf-sites-v4.php:189 fields/acf-sites-v5.php:167
+msgid "Site name"
+msgstr "Sajtnamn"
+
+#: fields/acf-sites-v4.php:190 fields/acf-sites-v5.php:168
+msgid "Site URL"
+msgstr "Sajt URL"
+
+#: fields/acf-sites-v4.php:191 fields/acf-sites-v5.php:169
+msgid "All (Array)"
+msgstr "Alla (Array)"
+
+#: fields/acf-sites-v4.php:231 fields/acf-sites-v5.php:198
+msgid "You need to have set up a multisite network for this field to work"
+msgstr "Du måste ha ett Multisite nätverk för att det här fältet ska fungera."
+
+#: fields/acf-sites-v4.php:252 fields/acf-sites-v5.php:219
+msgid "No sites found with the current field settings."
+msgstr "Inga sajter hittades med de nuvarande fältinställningarna."
+
+#: fields/acf-sites-v4.php:301 fields/acf-sites-v4.php:342 
+#: fields/acf-sites-v5.php:323
+msgid "None"
+msgstr "Ingen"
+
+#. Name of the plugin
+msgid "Advanced Custom Fields: Sites"
+msgstr "Advanced Custom Fields: Sites"
+
+#. Description of the plugin
+msgid ""
+"Adds a sites field type to ACF. Allows for selection of one or multiple "
+"sites in a multisite network."
+msgstr ""
+"Lägger till en sajt-fälttyp i ACF. Låter dig välja en eller flera sajter i "
+"ett Multisite nätverk."
+
+#. URI of the plugin
+msgid "https://github.com/jonathan-dejong/acf-sites"
+msgstr "https://github.com/jonathan-dejong/acf-sites"
+
+#. Author of the plugin
+msgid "Jonathan de Jong"
+msgstr "Jonathan de Jong"
+
+#. Author URI of the plugin
+msgid "https://github.com/jonathan-dejong/"
+msgstr "https://github.com/jonathan-dejong/"

@@ -1,15 +1,30 @@
 (function($){
-	
-	
+
+
 	function initialize_field( $el ) {
-		
-		//$el.doStuff();
-		
+
+		/**
+		 * Select2 for select. But only for ACF 5.n.
+		 */
+		if ( $el.find('select').length > 0 ) {
+			var $select = $el.find('select'),
+				$multiple = $select.data('multiple'),
+				$placeholder = $select.data('placeholder'),
+				$allow_null = $select.data('allow_null');
+
+			$select.select2({
+				width:				'100%',
+				containerCssClass:	'-acf',
+				allowClear:			$allow_null,
+				placeholder:		$placeholder,
+			});
+		}
+
 	}
-	
-	
+
+
 	if( typeof acf.add_action !== 'undefined' ) {
-	
+
 		/*
 		*  ready append (ACF5)
 		*
@@ -23,26 +38,26 @@
 		*  @param	$el (jQuery selection) the jQuery element which contains the ACF fields
 		*  @return	n/a
 		*/
-		
+
 		acf.add_action('ready append', function( $el ){
-			
-			// search $el for fields of type 'FIELD_NAME'
-			acf.get_fields({ type : 'FIELD_NAME'}, $el).each(function(){
-				
+
+			// search $el for fields of type 'sites'
+			acf.get_fields({ type : 'sites'}, $el).each(function(){
+
 				initialize_field( $(this) );
-				
+
 			});
-			
+
 		});
-		
-		
+
+
 	} else {
-		
-		
+
+
 		/*
 		*  acf/setup_fields (ACF4)
 		*
-		*  This event is triggered when ACF adds any new elements to the DOM. 
+		*  This event is triggered when ACF adds any new elements to the DOM.
 		*
 		*  @type	function
 		*  @since	1.0.0
@@ -53,18 +68,18 @@
 		*
 		*  @return	n/a
 		*/
-		
-		$(document).live('acf/setup_fields', function(e, postbox){
-			
-			$(postbox).find('.field[data-field_type="FIELD_NAME"]').each(function(){
-				
+
+		$(document).on('acf/setup_fields', function(e, postbox){
+
+			$(postbox).find('.field[data-field_type="sites"]').each(function(){
+
 				initialize_field( $(this) );
-				
+
 			});
-		
+
 		});
-	
-	
+
+
 	}
 
 

@@ -3,47 +3,85 @@
 /*
 Plugin Name: Advanced Custom Fields: Sites
 Plugin URI: https://github.com/jonathan-dejong/acf-sites
-Description: Extension for ACF which provides the user with either a dropdown or checkboxes to select a networks sites from. Returns the blog IDs to do with as you wish!
-Version: 1.1.2
+Description: Adds a sites field type to ACF. Allows for selection of one or multiple sites in a multisite network.
+Version: 2.0.0
 Author: Jonathan de Jong
-Author URI: tigerton.se
+Author URI: https://github.com/jonathan-dejong/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-
-
-
-// 1. set text domain
-// Reference: https://codex.wordpress.org/Function_Reference/load_plugin_textdomain
-load_plugin_textdomain( 'acf-sites', false, dirname( plugin_basename(__FILE__) ) . '/lang/' ); 
-
-
-
-
-// 2. Include field type for ACF5
-// $version = 5 and can be ignored until ACF6 exists
-function include_field_types_sites( $version ) {
-	
-	include_once('acf-sites-v5.php');
-	
+// exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
-add_action('acf/include_field_types', 'include_field_types_sites');	
+// check if class already exists
+if ( ! class_exists( 'Acf_Plugin_Sites' ) ) :
+
+	class Acf_Plugin_Sites {
+
+		/*
+		 *  __construct
+		 *
+		 *  This function will setup the class functionality
+		 *
+		 *  @type	function
+		 *  @date	17/02/2016
+		 *  @since	1.0.0
+		 *
+		 *  @param	n/a
+		 *  @return	n/a
+		 */
+
+		function __construct() {
+
+			// vars
+			$this->settings = array(
+				'version'	=> '2.0.0',
+				'url'		=> plugin_dir_url( __FILE__ ),
+				'path'		=> plugin_dir_path( __FILE__ ),
+			);
+
+			// set text domain
+			// https://codex.wordpress.org/Function_Reference/load_plugin_textdomain
+			load_plugin_textdomain( 'acf-sites', false, plugin_basename( dirname( __FILE__ ) ) . '/lang' );
+
+			// include field
+			add_action( 'acf/include_field_types', 	array( $this, 'include_field_types' ) ); // v5
+			add_action( 'acf/register_fields', 		array( $this, 'include_field_types' ) ); // v4
+
+		}
 
 
+		/*
+		 *  include_field_types
+		 *
+		 *  This function will include the field type class
+		 *
+		 *  @type	function
+		 *  @date	17/02/2016
+		 *  @since	1.0.0
+		 *
+		 *  @param	$version (int) major ACF version. Defaults to false
+		 *  @return	n/a
+		 */
+		function include_field_types( $version = false ) {
+
+			// support empty $version
+			if ( ! $version ) {
+				$version = 4;
+			}
+
+			// include
+			include_once( 'fields/acf-sites-v' . $version . '.php' );
+
+		}
+
+	}
 
 
-// 3. Include field type for ACF4
-function register_fields_sites() {
-	
-	include_once('acf-sites-v4.php');
-	
-}
+	// initialize
+	new Acf_Plugin_Sites();
 
-add_action('acf/register_fields', 'register_fields_sites');	
-
-
-
-	
-?>
+endif; // class_exists check
