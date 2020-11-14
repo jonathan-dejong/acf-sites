@@ -8,10 +8,18 @@
 		 */
 		if ( $el.find('select').length > 0 ) {
 			var $select = $el.find('select'),
-				$multiple = $select.data('multiple'),
 				$placeholder = $select.data('placeholder'),
 				$allow_null = $select.data('allow_null');
 
+			// Before the Select2 field is initialized, remove of the `data-ajax` data
+			// attribute on the <select> field that ACF generates, as that data
+			// attribute causes Select2 to expect AJAX functionality that this plugin
+			// does not provide. This is a workaround to fix functionality until this
+			// plugin is re-written.
+			// Relevant issue: https://github.com/jonathan-dejong/acf-sites/issues/6
+			$select.removeAttr('data-ajax');
+
+			// Initialize the Select2 field.
 			$select.select2({
 				width:				'100%',
 				containerCssClass:	'-acf',
