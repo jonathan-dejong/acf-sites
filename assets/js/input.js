@@ -8,7 +8,6 @@
 		 */
 		if ( $el.find('select').length > 0 ) {
 			var $select = $el.find('select'),
-				$multiple = $select.data('multiple'),
 				$placeholder = $select.data('placeholder'),
 				$allow_null = $select.data('allow_null');
 
